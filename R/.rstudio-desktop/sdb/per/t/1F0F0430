@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "library(\"arules\")\nlibrary(\"arulesViz\")\n\npatterns = random.patterns(nItems = 1000);\nsummary(patterns);\ntrans = random.transactions(nItems = 1000, nTrans = 1000, method = \"agrawal\",  patterns = patterns);\nimage(trans)\n\ndata(\"AdultUCI\");\nAdult = as(AdultUCI, \"transactions\");\nrules = apriori(Adult, parameter=list(support=0.01, confidence=0.5));\nrules\n\ninspect(head(sort(rules, by=\"lift\"),3));\nlot(rules);\nhead(quality(rules));\nplot(rules, measure=c(\"support\",\"lift\"), shading=\"confidence\");\nplot(rules, shading=\"order\", control=list(main =\"Two-key plot\"));\n\n# another example\nlist  <- list('001'=c('beer', 'nappy'), '002'=c('beer', 'nappy'), '003'='lipstick', '004'='beer')\ntrData <- as(list, 'transactions')  # 转化为transaction类数据\ninspect(trData)  # 查看数据情况\n\nrules <- apriori(trData, parameter = list(supp = 0.1, conf =0.1))  # apriori关联算法函数调用\ninspect(rules)  # 查看输出的规则\n\nplot(rules, method='scatterplot') # 散点图判断大量规则的支持度与置信度分布情况\nplot(rules, method='graph', control = list(type='items')) # 关联图看相互关系\n\na_matrix <- matrix(\n  c(1, 1, 1, 0, 0,\n    1, 1, 0, 0, 0,\n    1, 1, 0, 1, 0,\n    0, 0, 1, 0, 1,\n    1, 1, 0, 1, 1),\n  ncol = 5,\n  dimnames = list(\n    c('id1', 'id2', 'id3', 'id4', 'id5'),\n    c('bread', 'coke', 'milk', 'beer', 'butter')\n  )\n)\n\na_matrix \ntransaction.of.a_matrix <- as(a_matrix, \"transactions\")\nclass(transaction.of.a_matrix)\ninspect(transaction.of.a_matrix)\n\na_df <- data.frame(\n  age = as.factor(c(6,8,7,6,9,5)), \n  grade = as.factor(c(1,3,1,1,4,1)))  \na_df\ntrans3 <- as(a_df, \"transactions\") \nimage(trans3)",
+    "created" : 1458796982673.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3852453972",
+    "id" : "1F0F0430",
+    "lastKnownWriteTime" : 1503773764,
+    "last_content_update" : 1503773764,
+    "path" : "~/Documents/r/arules.R",
+    "project_path" : null,
+    "properties" : {
+        "marks" : "<:0,0\n>:0,0\nn:0,0\nx:0,0\nm:0,0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

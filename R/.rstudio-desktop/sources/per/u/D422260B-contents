@@ -1,0 +1,29 @@
+library(data.table)
+
+flights <- fread("https://raw.githubusercontent.com/wiki/arunsrinivasan/flights/NYCflights14/flights14.csv")
+
+flights
+dim(flights)
+
+DT = data.table(ID = c("b","b","b","a","a","c"), a = 1:6, b = 7:12, c = 13:18)
+DT
+
+class(DT$ID)
+
+ans <- flights[origin == "JFK" & month == 6L]
+head(ans)
+
+ans <- flights[order(origin, -dest)]
+ans
+
+ans <- flights[, .(arr_delay)]
+head(ans)
+
+ans <- flights[, .(delay_arr = arr_delay, delay_dep = dep_delay)]
+ans
+
+ans <- flights[origin == "JFK" & month == 6L, .N]
+ans
+
+ans <- flights[, .(arr_delay, dep_delay)]
+ans

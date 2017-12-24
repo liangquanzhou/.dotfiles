@@ -1,0 +1,100 @@
+---
+title: "ANLY 512 - Problem Set 2"
+subtitle: "Anscombe's quartet"
+author: "Liangquan Zhou"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+
+## Objectives
+
+The objectives of this problem set is to orient you to a number of activities in `R`.  And to conduct a thoughtful exercise in appreciating the importance of data visualization.  For each question create a code chunk or text response that completes/answers the activity or question requested. Finally, upon completion name your final output `.html` file as: `YourName_ANLY512-Section-Year-Semester.html` and upload it to the "Problem Set 2" assignmenet on Moodle.
+
+
+
+## Questions
+
+1. Anscombes quartet is a set of 4 $x,y$ data sets that were published by *Francis Anscombe* in a 1973 paper [*Graphs in statistical analysis*](https://www.jstor.org/stable/2682899?seq=1#page_scan_tab_contents).  For this first question load the `anscombe` data that is part of the `library(datasets)` in `R`.  And assign that data to a new object called `data`.
+
+```{r}
+data <- datasets::anscombe
+data
+```
+
+
+2. Summarise the data by calculating the mean, variance, for each column and the correlation between each pair (eg. x1 and y1, x2 and y2, etc) (Hint: use the `fBasics()` package!)
+
+```{r}
+colMeans(data)
+cor(data$x1, data$y1)
+cor(data$x2, data$y2)
+cor(data$x3, data$y3)
+cor(data$x4, data$y4)
+```
+
+3. Create scatter plots for each $x, y$ pair of data.
+```{r}
+plot(data$x1, data$y1)
+plot(data$x2, data$y2)
+plot(data$x3, data$y3)
+plot(data$x4, data$y4)
+```
+
+4. Now change the symbols on the scatter plots to solid circles and plot them together as a 4 panel graphic
+
+```{r}
+par(mfrow = c(2,2), pch = 16)
+plot(data$x1, data$y1)
+plot(data$x2, data$y2)
+plot(data$x3, data$y3)
+plot(data$x4, data$y4)
+```
+
+5. Now fit a linear model to each data set using the `lm()` function.
+```{r}
+lm1 <- lm(data$y1 ~ data$x1)
+lm2 <- lm(data$y2 ~ data$x2)
+lm3 <- lm(data$y3 ~ data$x3)
+lm4 <- lm(data$y4 ~ data$x4)
+```
+
+6. Now combine the last two tasks.  Create a four panel scatter plot matrix that has both the data points and the regression lines. (hint: the model objects will carry over chunks!)
+```{r}
+par(mfrow = c(2,2), pch = 16)
+plot(data$x1, data$y1)
+abline(lm(data$y1 ~ data$x1))
+
+plot(data$x2, data$y2)
+abline(lm(data$y2 ~ data$x2))
+
+plot(data$x3, data$y3)
+abline(lm(data$y3 ~ data$x3))
+
+plot(data$x4, data$y4)
+abline(lm(data$y4 ~ data$x4))
+```
+
+
+7.  Now compare the model fits for each model object.
+```{r}
+anova(lm1)
+anova(lm2)
+anova(lm3)
+anova(lm4)
+```
+
+
+8. In text, summarize the lesson of Anscombe's Quartet and what it says about the value of data visualization.
+
+The summary of the lessons learned from Anscombe’s Quartet exercise is that data visulization is important at various stages of an analysis. It helps us understand the relationship between different variables like in the scatter plots. It also helps us derive the usabilty of the dataset by understanding the outliers which can drastic change the inferences we draw from the analysis.
+
+
+
+
+

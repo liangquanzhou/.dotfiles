@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1510541630514.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1456349711",
+    "id" : "962003CE",
+    "lastKnownWriteTime" : 1513663762,
+    "last_content_update" : 1513663807507,
+    "path" : "~/Documents/Harrisburg/512-50/ProblemSet_2.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "17,0",
+        "last_setup_crc32" : "",
+        "scrollLine" : "100"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

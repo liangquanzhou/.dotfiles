@@ -1,0 +1,9 @@
+[push]
+	default = matching
+[user]
+	name = Liangquan Zhou
+	email = liangquanzhou@gmail.com
+[core]
+	excludesfile = $HOME/.gitignore_global
+[init]
+	templatedir = $HOME/.git-templates

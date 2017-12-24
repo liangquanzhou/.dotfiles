@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1507611581720.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1148123041",
+    "id" : "A188A14",
+    "lastKnownWriteTime" : 1509422824,
+    "last_content_update" : 1509422824295,
+    "path" : "~/Documents/test.c",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "6,20",
+        "marks" : "",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "c"
+}
