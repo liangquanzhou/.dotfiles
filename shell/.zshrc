@@ -3,7 +3,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Use Antigen
 # Load the oh-my-zsh's library.
-source /usr/local/share/antigen/antigen.zsh
+ANTIGEN_PATH=~/.dotfiles
+source $ANTIGEN_PATH/antigen/antigen.zsh
+
 antigen init .antigenrc
 
 # configure comdump location
@@ -21,7 +23,5 @@ eval $(thefuck --alias)
 # use fzf for quick fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# use autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 

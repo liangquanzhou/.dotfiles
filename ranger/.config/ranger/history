@@ -1,15 +1,33 @@
-open_with ibooks
 preview
 find 
-
  
 open.
  open .
-open
 :help
 help
 open .q
 open .
 ls
 zsh
+open_with iBooks.app
+open_with ibooks
+open_with ibooks f
+open_with gimp
+open_with open ibooks.app
+open preview
+open_with preview
+open
+open_with
+open_with pdfexpert
+open_with open pdfexpert
+open_with open
+open_with 
+delte
 delete
+open_with 0
+open_with q
+open_with open preview
+
+open_with 3
+open_with 1
+open_with 2

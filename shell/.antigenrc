@@ -5,13 +5,16 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle gitfast
 antigen bundle colored-man-pages
+antigen bundle tmux
 antigen bundle colorize
 antigen bundle mvn
 antigen bundle vi-mode
+antigen bundle autojump
 antigen bundle osx
 
-# Syntax highlighting bundle.
+# Bundles not in oh-my-zsh
 antigen bundle djui/alias-tips
+antigen bundle s7anley/zsh-geeknote
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
