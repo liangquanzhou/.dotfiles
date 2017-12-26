@@ -1,5 +1,5 @@
 # added by Anaconda3 5.0.0 installer
-export PATH="/Users/liangquanzhou/miniconda3/bin:$PATH"
+export PATH="$HOME/miniconda3/bin:$PATH"
 
 # added pandoc for running R in command line
 export RSTUDIO_PANDOC=/Applications/RStudio.app/Contents/MacOS/pandoc
@@ -18,7 +18,10 @@ if [ -f $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash ]; then
     fi
 alias sa='s -p amazon'
 alias sw='s -p wikipedia'
-alias sg='s -g google'
-alias s='s -p duckduckgo'
+alias sg='s -p google'
+alias sd='s -p duckduckgo'
+alias sz='s -p zhihu'
+alias se='s -p ebay'
 alias d='cd ~/Documents'
 
+PROJECT_PATH=(~/Programs)
