@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
 
 # Use Antigen
 # Load the oh-my-zsh's library.
@@ -23,5 +24,8 @@ eval $(thefuck --alias)
 # use fzf for quick fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
+# mutt for gmail - 2 step verification
+export MUTT_EMAIL_ADDRESS="liangquanzhou1@gmail.com"
+export MUTT_REALNAME="Liangquan Zhou"
+export MUTT_SMTP_URL="smtp://liangquanzhou1@smtp.gmail.com:587/"
 
