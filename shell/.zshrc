@@ -7,7 +7,7 @@ export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
 ANTIGEN_PATH=~/.dotfiles
 source $ANTIGEN_PATH/antigen/antigen.zsh
 
-antigen init .antigenrc
+antigen init $HOME/.antigenrc
 
 # configure comdump location
 export ANTIGEN_COMPDUMPFILE=/path/to/location/.zcompdump
@@ -29,3 +29,4 @@ export MUTT_EMAIL_ADDRESS="liangquanzhou1@gmail.com"
 export MUTT_REALNAME="Liangquan Zhou"
 export MUTT_SMTP_URL="smtp://liangquanzhou1@smtp.gmail.com:587/"
 
+export XML_CATALOG_FILES=/usr/local/etc/xml/catalog

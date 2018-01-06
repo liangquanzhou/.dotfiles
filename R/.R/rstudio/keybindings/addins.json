@@ -1,5 +1,0 @@
-{
-    "addinexamples::insertInAddin" : "Shift+Cmd+I",
-    "strcode::insert_l1_break" : "Shift+Cmd+1",
-    "strcode::insert_l2_break" : "Shift+Cmd+2"
-}

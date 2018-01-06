@@ -1,9 +1,0 @@
-{
-    "activateConsole" : "Cmd+2",
-    "activateHelp" : "Cmd+3",
-    "activateSource" : "Cmd+1",
-    "activateTerminal" : "Cmd+4",
-    "activateViewer" : "Cmd+9",
-    "insertAssignmentOperator" : "Shift+Cmd+,",
-    "insertPipeOperator" : "Shift+Cmd+."
-}

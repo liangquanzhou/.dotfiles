@@ -23,5 +23,6 @@ alias sd='s -p duckduckgo'
 alias sz='s -p zhihu'
 alias se='s -p ebay'
 alias d='cd ~/Documents'
+alias yd='ydcv'
 
 PROJECT_PATH=(~/Programs)
