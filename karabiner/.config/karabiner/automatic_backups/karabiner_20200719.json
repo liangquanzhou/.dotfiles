@@ -2010,6 +2010,30 @@
                         ]
                     },
                     {
+                        "description": "Change shift + delete to forward delete",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Mouse keys (full) (rev 4)",
                         "manipulators": [
                             {
@@ -4264,33 +4288,6 @@
                                 "type": "basic"
                             }
                         ]
-                    },
-                    {
-                        "description": "Map Ctrl+Backspace-Delete to Fn+Backward-Delete (suppr current character)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "delete_or_backspace",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": [
-                                            "fn"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
                     }
                 ]
             },
@@ -4686,34 +4683,34 @@
                         },
                         {
                             "from": {
-                                "key_code": "delete_or_backspace"
-                            },
-                            "to": {
-                                "key_code": "backslash"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "escape"
-                            },
-                            "to": {
-                                "key_code": "grave_accent_and_tilde"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "grave_accent_and_tilde"
-                            },
-                            "to": {
-                                "key_code": "escape"
-                            }
-                        },
-                        {
-                            "from": {
                                 "key_code": "left_control"
                             },
                             "to": {
                                 "key_code": "caps_lock"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "escape"
+                            },
+                            "to": {
+                                "key_code": "grave_accent_and_tilde"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "grave_accent_and_tilde"
+                            },
+                            "to": {
+                                "key_code": "escape"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "delete_or_backspace"
+                            },
+                            "to": {
+                                "key_code": "backslash"
                             }
                         }
                     ]

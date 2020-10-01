@@ -1,4 +1,3 @@
-" Basic setup
 " Leader key
 let mapleader=","
 
@@ -20,7 +19,7 @@ set tabstop=2
 " set softtabstop=2
 set expandtab
 set copyindent
-
+set rtp+=/usr/local/opt/fzf
 
 syntax enable
 filetype plugin indent on
@@ -45,9 +44,10 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'junegunn/vim-easy-align'
-Plug 'jalvesaq/Nvim-R'
+" Plug 'jalvesaq/Nvim-R'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'zxqfl/tabnine-vim'
 
 " Initialize plugin system
 call plug#end()

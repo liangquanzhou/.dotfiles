@@ -1,16 +1,28 @@
 # load packages without any warning
-stfu <- function(a.package){
-  suppressWarnings(suppressPackageStartupMessages(
-    library(a.package, character.only=TRUE)))
-}
+# stfu <- function(a.package){
+#   suppressWarnings(suppressPackageStartupMessages(
+#     library(a.package, character.only=TRUE)))
+# }
 
-# packages need to be auto loaded 
-auto.loads <-c("tidyverse", "magrittr", "data.table")
- 
+# setup CRAN mirror, use tsinghua cran source
+options("repos" = c(CRAN="https://mirrors.tuna.tsinghua.edu.cn/CRAN/"))
+options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")
+
+# packages need to be auto loaded
+# auto.loads <-c("tidyverse", "magrittr", "data.table", "reticulate")
+
+# if (!require(pacman)) install.packages("pacman")
+
 # load packages without warnings
 if(interactive()){
-  invisible(sapply(auto.loads, stfu))
+  # invisible(sapply(auto.loads, stfu))
+  suppressWarnings(suppressPackageStartupMessages(
+    if (!require(pacman)) install.packages("pacman")
+  ))
+  invisible(pacman::p_load(stats, tidyverse, magrittr, RPresto, DT, parallel, DBI, scales, lubridate, dbplyr, readxl, clipr))
 }
+
+#reticulate::use_condaenv(condaenv = "py37", conda = "/Users/liangquanzhou/miniconda3/envs/py37")
 
 # always want stringAsFactors = FALSE
 options(stringsAsFactors = FALSE)
@@ -41,6 +53,6 @@ options(scipen=10)
                                     )
                                   }
 # Returns a logical vector TRUE for elements of X not in Y
-.env$"%nin%" <- function(x, y) !(x %in% y) 
+.env$"%nin%" <- function(x, y) !(x %in% y)
 
 attach(.env)

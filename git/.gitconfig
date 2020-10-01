@@ -4,6 +4,8 @@
 	name = Liangquan Zhou
 	email = liangquanzhou@gmail.com
 [core]
-	excludesfile = $HOME/.gitignore_global
+	excludesfile = ~/.gitignore
 [init]
-	templatedir = $HOME/.git-templates
+	templatedir = ~/.git-templates
+[icdiff]
+	options = --highlight --line-numbers

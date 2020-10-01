@@ -1,32 +1,28 @@
+HISTSIZE=50000
+SAVEHIST=50000
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
+#export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+#export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
 
-# Use Antigen
-# Load the oh-my-zsh's library.
-ANTIGEN_PATH=~/.dotfiles
-source $ANTIGEN_PATH/antigen/antigen.zsh
+#export PATH="$HOME/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
+#export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+#export PS1='($(pyenv version-name)) '$PS1
 
-antigen init $HOME/.antigenrc
+# Use Zplug
+source ~/.zplugrc
 
-# configure comdump location
-export ANTIGEN_COMPDUMPFILE=/path/to/location/.zcompdump
-
-# Source additional config
-source $HOME/.bash_profile
-
-# imcompatiable with antigen plugin
-source $HOME/.pm/pm.zsh
-
-# thefuck is a command fix tool
-eval $(thefuck --alias)
+# source personal settings
+source ~/.bash_profile.lz
 
 # use fzf for quick fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# mutt for gmail - 2 step verification
-export MUTT_EMAIL_ADDRESS="liangquanzhou1@gmail.com"
-export MUTT_REALNAME="Liangquan Zhou"
-export MUTT_SMTP_URL="smtp://liangquanzhou1@smtp.gmail.com:587/"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
-export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+export PATH="/usr/local/sbin:$PATH"
