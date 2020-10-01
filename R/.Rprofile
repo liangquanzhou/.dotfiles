@@ -7,6 +7,7 @@
 # setup CRAN mirror, use tsinghua cran source
 options("repos" = c(CRAN="https://mirrors.tuna.tsinghua.edu.cn/CRAN/"))
 options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")
+# options('defaultPackages') <-
 
 # packages need to be auto loaded
 # auto.loads <-c("tidyverse", "magrittr", "data.table", "reticulate")
@@ -19,10 +20,10 @@ if(interactive()){
   suppressWarnings(suppressPackageStartupMessages(
     if (!require(pacman)) install.packages("pacman")
   ))
-  invisible(pacman::p_load(stats, tidyverse, magrittr, RPresto, DT, parallel, DBI, scales, lubridate, dbplyr, readxl, clipr))
+  invisible(pacman::p_load(stats, tidyverse, magrittr, RPresto, DT, parallel, DBI, scales, lubridate, dbplyr, readxl, clipr, reticulate))
 }
 
-#reticulate::use_condaenv(condaenv = "py37", conda = "/Users/liangquanzhou/miniconda3/envs/py37")
+try(reticulate::use_condaenv(condaenv = "py37", conda = Sys.getenv('RETICULATE_PYTHON')), silent = T)
 
 # always want stringAsFactors = FALSE
 options(stringsAsFactors = FALSE)
@@ -44,14 +45,14 @@ options(scipen=10)
 # create an empty environment for self defined functions
 .env <- new.env()
 # List all functions in a package (also from @_inundata)
-.env$lsp <-function(package, all.names = FALSE, pattern) {
-    package <- deparse(substitute(package))
-        ls(
-                pos = paste("package", package, sep = ":"),
-                        all.names = all.names,
-                                pattern = pattern
-                                    )
-                                  }
+.env$lsp <- function(package, all.names = FALSE, pattern) {
+  package <- deparse(substitute(package))
+  ls(
+    pos = paste("package", package, sep = ":"),
+    all.names = all.names,
+    pattern = pattern
+  )
+}
 # Returns a logical vector TRUE for elements of X not in Y
 .env$"%nin%" <- function(x, y) !(x %in% y)
 

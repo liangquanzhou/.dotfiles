@@ -47,7 +47,7 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'jalvesaq/Nvim-R'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'zxqfl/tabnine-vim'
+"Plug 'zxqfl/tabnine-vim'
 
 " Initialize plugin system
 call plug#end()

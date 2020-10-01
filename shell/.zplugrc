@@ -1,8 +1,11 @@
-source /usr/local/opt/zplug/init.zsh
+# zplug home dir 
+export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
+# zsh theme
 zplug "themes/robbyrussell", from:oh-my-zsh
 
+# zsh plugins
 zplug "lib/*", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/gitfast", from:oh-my-zsh
@@ -28,6 +31,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 
 #zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
+# check, load, install
 zplug check || zplug install
 
 zplug load
