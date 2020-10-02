@@ -19,7 +19,10 @@ set tabstop=2
 " set softtabstop=2
 set expandtab
 set copyindent
-set rtp+=/usr/local/opt/fzf
+
+" systemwide clipboard
+set clipboard=unnamed
+"set rtp+=/usr/local/opt/fzf
 
 syntax enable
 filetype plugin indent on
@@ -47,6 +50,9 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'jalvesaq/Nvim-R'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'honza/vim-snippets'
 "Plug 'zxqfl/tabnine-vim'
 
 " Initialize plugin system
