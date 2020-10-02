@@ -1,0 +1,380 @@
+{
+    "title": "LZ personal",
+    "rules": [
+        {
+            "description": "R assign",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "command",
+                      "modifiers": {
+                        "optional": [
+                          "shift"
+                        ]
+                      }
+                    },
+                    "to": [
+                        {
+                          "key_code": "comma",
+                          "modifiers": [
+                            "left_shift"
+                          ]
+                        },
+                        {
+                          "key_code": "hyphen"
+                        },
+                        {
+                          "key_code": "spacebar"
+                        }
+                    ],
+                    "conditions": [
+                      {
+                        "type": "variable_if",
+                        "name": "r_assign",
+                        "value": 1
+                      },
+                      {
+                        "type": "frontmost_application_unless",
+                        "bundle_identifiers": [
+                          "^org\\.rstudio\\.RStudio$"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "simultaneous": [
+                        {
+                          "key_code": "left_command"
+                        },
+                        {
+                          "key_code": "left_shift"
+                        },
+                        {
+                          "key_code": "comma"
+                        }
+                      ],
+                      "simultaneous_options": {
+                        "key_down_order": "strict",
+                        "key_up_order": "strict_inverse",
+                        "detect_key_down_uninterruptedly": true,
+                        "to_after_key_up": [
+                          {
+                            "set_variable": {
+                              "name": "r_assign",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      },
+                      "modifiers": {
+                        "optional": [
+                          "any"
+                        ]
+                      }
+                    },
+                    "to": [
+                      {
+                        "set_variable": {
+                          "name": "r_assign",
+                          "value": 1
+                        }
+                      },
+                      {
+                        "key_code": "comma",
+                        "modifiers": [
+                          "left_shift"
+                        ]
+                      },
+                      {
+                        "key_code": "hyphen"
+                      },
+                      {
+                        "key_code": "spacebar"
+                      }
+                    ],
+                    "conditions": [
+                      {
+                        "type": "frontmost_application_unless",
+                        "bundle_identifiers": [
+                          "^org\\.rstudio\\.RStudio$"
+                        ]
+                      }
+                    ]
+                  }
+            ]
+        },
+        {
+            "description": "R pipe",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "command",
+                      "modifiers": {
+                        "optional": [
+                          "shift"
+                        ]
+                      }
+                    },
+                    "to": [
+                        {
+                          "key_code": "5",
+                          "modifiers": [
+                            "left_shift"
+                          ]
+                        },
+                        {
+                          "key_code": "period",
+                          "modifiers": [
+                            "left_shift"
+                          ]
+                        },
+                        {
+                          "key_code": "5",
+                          "modifiers":[
+                            "left_shift"
+                          ]
+                        },
+                        {
+                          "key_code": "spacebar"
+                        }
+                    ],
+                    "conditions": [
+                      {
+                        "type": "variable_if",
+                        "name": "r_pipe",
+                        "value": 1
+                      },
+                      {
+                        "type": "frontmost_application_unless",
+                        "bundle_identifiers": [
+                          "^org\\.rstudio\\.RStudio$"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "simultaneous": [
+                        {
+                          "key_code": "left_command"
+                        },
+                        {
+                          "key_code": "left_shift"
+                        },
+                        {
+                          "key_code": "period"
+                        }
+                      ],
+                      "simultaneous_options": {
+                        "key_down_order": "strict",
+                        "key_up_order": "strict_inverse",
+                        "detect_key_down_uninterruptedly": true,
+                        "to_after_key_up": [
+                          {
+                            "set_variable": {
+                              "name": "r_assign",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      },
+                      "modifiers": {
+                        "optional": [
+                          "any"
+                        ]
+                      }
+                    },
+                    "to": [
+                      {
+                        "set_variable": {
+                          "name": "r_pipe",
+                          "value": 1
+                        }
+                      },
+                      {
+                        "key_code": "5",
+                        "modifiers": [
+                          "left_shift"
+                        ]
+                      },
+                      {
+                        "key_code": "period",
+                        "modifiers": [
+                          "left_shift"
+                        ]
+                      },
+                      {
+                        "key_code": "5",
+                        "modifiers":[
+                          "left_shift"
+                        ]
+                      },
+                      {
+                        "key_code": "spacebar"
+                      }
+                    ],
+                    "conditions": [
+                      {
+                        "type": "frontmost_application_unless",
+                        "bundle_identifiers": [
+                          "^org\\.rstudio\\.RStudio$"
+                        ]
+                      }
+                    ]
+                  }
+            ]
+        },
+        {
+            "description": "F as trigger key",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "j",
+                      "modifiers": {
+                        "optional": [
+                          "any"
+                        ]
+                      }
+                    },
+                    "to": [
+                      {
+                        "key_code": "hyphen",
+                        "modifiers": [
+                          "left_shift"
+                        ]
+                      }
+                    ],
+                    "conditions": [
+                      {
+                        "type": "variable_if",
+                        "name": "lz_personal",
+                        "value": 1
+                      }
+                    ]
+                },
+                {
+                "type": "basic",
+                "from": {
+                    "simultaneous": [
+                    {
+                        "key_code": "f"
+                    },
+                    {
+                        "key_code": "j"
+                    }
+                    ],
+                    "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse",
+                    "detect_key_down_uninterruptedly": false,
+                    "to_after_key_up": [
+                        {
+                        "set_variable": {
+                            "name": "lz_personal",
+                            "value": 0
+                        }
+                        }
+                    ]
+                    },
+                    "modifiers": {
+                    "optional": [
+                        "any"
+                    ]
+                    }
+                },
+                "to": [
+                    {
+                    "set_variable": {
+                        "name": "lz_personal",
+                        "value": 1
+                    }
+                    },
+                    {
+                    "key_code": "hyphen",
+                    "modifiers": [
+                        "left_shift"
+                    ]
+                    }
+                ]
+                }
+                ,{
+                    "type": "basic",
+                    "from": {
+                      "key_code": "k",
+                      "modifiers": {
+                        "optional": [
+                          "any"
+                        ]
+                      }
+                    },
+                    "to": [
+                      {
+                        "key_code": "equal_sign",
+                        "modifiers": [
+                          "left_shift"
+                        ]
+                      }
+                    ],
+                    "conditions": [
+                      {
+                        "type": "variable_if",
+                        "name": "lz_personal",
+                        "value": 1
+                      }
+                    ]
+                },
+                {
+                "type": "basic",
+                "from": {
+                    "simultaneous": [
+                    {
+                        "key_code": "f"
+                    },
+                    {
+                        "key_code": "k"
+                    }
+                    ],
+                    "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse",
+                    "detect_key_down_uninterruptedly": false,
+                    "to_after_key_up": [
+                        {
+                        "set_variable": {
+                            "name": "lz_personal",
+                            "value": 0
+                        }
+                        }
+                    ]
+                    },
+                    "modifiers": {
+                    "optional": [
+                        "any"
+                    ]
+                    }
+                },
+                "to": [
+                    {
+                    "set_variable": {
+                        "name": "lz_personal",
+                        "value": 1
+                    }
+                    },
+                    {
+                    "key_code": "equal_sign",
+                    "modifiers": [
+                        "left_shift"
+                    ]
+                    }
+                ]
+                }
+            ]
+        }
+    ]
+}
