@@ -10,7 +10,8 @@ if(interactive()){
   invisible(pacman::p_load(stats, tidyverse, magrittr, RPresto, DT, parallel, DBI, scales, lubridate, dbplyr, readxl, clipr, reticulate, conflr))
 }
 
-try(reticulate::use_condaenv(condaenv = "py3", conda = Sys.getenv('RETICULATE_PYTHON')), silent = T)
+# source personal settings
+try(source(paste0("~/.Rprofile.",system('whoami',intern = T))), silent = T)
 
 # always want stringAsFactors = FALSE
 options(stringsAsFactors = FALSE)
@@ -21,16 +22,16 @@ options(max.print = 100)
 # tweak the prompt in console
 options(prompt="> ", dights = 3, continue = " ")
 
-# Don't save workspace by default
-q <- function (save="no", ...) {
-  quit(save=save, ...)
-}
-
 # Setting 'scipen=10' to not  use scientific notation to express very small or large numbers
 options(scipen=10)
 
 # create an empty environment for self defined functions
 .env <- new.env()
+
+# Don't save workspace by default
+.env$q <- function (save="no", ...) {
+  quit(save=save, ...)
+}
 
 # Returns a logical vector TRUE for elements of X not in Y
 .env$"%nin%" <- function(x, y) !(x %in% y)
@@ -110,6 +111,7 @@ options(scipen=10)
 
   # return the link used in markdown
   result <- confl_list_attachments(page_id, filename = basename(path))
+
   # this link can be referenced in rmarkdown
   attachment_preview_link <- paste0(result[['_links']][['base']], result[['results']][[1]][['_links']][['webui']])
   return(attachment_preview_link)
