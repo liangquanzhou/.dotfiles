@@ -11,7 +11,7 @@ if(interactive()){
 }
 
 # source personal settings
-try(source(paste0("~/.Rprofile.",system('whoami',intern = T))), silent = T)
+try(source(paste0("~/.Rprofile.", system('whoami',intern = T), ".R")), silent = T)
 
 # always want stringAsFactors = FALSE
 options(stringsAsFactors = FALSE)
@@ -28,10 +28,10 @@ options(scipen=10)
 # create an empty environment for self defined functions
 .env <- new.env()
 
-# Don't save workspace by default
-.env$q <- function (save="no", ...) {
-  quit(save=save, ...)
-}
+# # Don't save workspace by default
+# .env$q <- function (save="no", ...) {
+#   quit(save=save, ...)
+# }
 
 # Returns a logical vector TRUE for elements of X not in Y
 .env$"%nin%" <- function(x, y) !(x %in% y)
