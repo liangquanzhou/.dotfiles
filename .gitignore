@@ -9,6 +9,8 @@
 # Icon must end with two \r
 Icon
 
+# karabiner backups
+karabiner/.config/karabiner/automatic_backups/
 
 # Thumbnails
 ._*

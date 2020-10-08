@@ -6,6 +6,7 @@
 
 # You always need to import ranger.api.commands here to get the Command class:
 from ranger.api.commands import *
+from ranger.core.loader import CommandLoader
 
 # A simple command for demonstration purposes follows.
 #------------------------------------------------------------------------------
