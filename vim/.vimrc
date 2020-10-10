@@ -64,6 +64,13 @@ let g:airline#extensions#bufferline#overwrite_variables = 1
 nmap <leader>p <Plug>AirlineSelectPrevTab
 nmap <leader>n <Plug>AirlineSelectNextTab
 
+" CtrlSpace settings
+let g:CtrlSpaceSetDefaultMapping = 1
+let g:CtrlSpaceDefaultMappingKey = "<leader><space>"
+let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
+let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
+let g:CtrlSpaceSaveWorkspaceOnExit = 1
+
 " systemwide clipboard
 set clipboard=unnamed
 "set rtp+=/usr/local/opt/fzf
@@ -106,7 +113,7 @@ Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-surround'
 Plug 'bling/vim-bufferline'
 Plug 'scrooloose/nerdtree'
-Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
 Plug 'lfv89/vim-interestingwords'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 " Initialize plugin system
