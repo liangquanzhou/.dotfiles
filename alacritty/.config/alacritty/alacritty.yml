@@ -1,0 +1,94 @@
+# ref: https://github.com/alacritty/alacritty/blob/dea7a0890a724c50bc5767039f45a2e3d071ee1c/alacritty.yml
+env:
+  TERM: xterm-256color
+
+window:
+  decorations: 'buttonless'
+
+scrolling:
+  history: 20000
+  multiplier: 3
+
+font:
+  size: 13
+  normal:
+    family: Kaiti SC CN
+    family: Hack Nerd Font
+    style: Regular
+  bold:
+    family: Kaiti SC CN
+    family: Hack Nerd Font
+    style: Bold
+  italic:
+    family: Hack Nerd Font
+    style: Italic
+  bold_italic:
+    family: Hack Nerd Font
+    style: Bold Italic
+  use_thin_strokes: true
+
+draw_bold_text_with_bright_colors: true
+
+background_opacity: 1.0
+
+mouse:
+  url:
+    launcher: open
+    modifiers: Command
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+  save_to_clipboard: false
+
+custom_cursor_colors: true
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+  thickness: 1
+
+live_config_reload: true
+
+shell:
+  program: /usr/local/bin/zsh
+  args:
+    - --login
+
+debug:
+  print_events: true
+
+colors:
+  # Default colors
+  primary:
+    background: '#1B1D1E'
+    foreground: '#F8F8F2'
+  # Normal colors
+  normal:
+    black: '#333333'
+    red: '#C4265E'
+    green: '#86B42B'
+    yellow: '#B3B42B'
+    blue: '#6A7EC8'
+    magenta: '#8C6BC8'
+    cyan: '#56ADBC'
+    white: '#E3E3DD'
+  # Bright colors
+  bright:
+    black: '#666666'
+    red: '#F92672'
+    green: '#A6E22E'
+    yellow: '#E2E22E'
+    blue: '#819AFF'
+    magenta: '#AE81FF'
+    cyan: '#66D9EF'
+    white: '#F8F8F2'
+  cursor:
+    text: '#000000'
+    cursor: '#00ff00'
+
+key_bindings:
+  - {
+      key: Return,
+      mods: Control|Shift,
+      action: SpawnNewInstance
+    }
