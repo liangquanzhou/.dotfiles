@@ -12,11 +12,9 @@ scrolling:
 font:
   size: 13
   normal:
-    family: Kaiti SC CN
     family: Hack Nerd Font
     style: Regular
   bold:
-    family: Kaiti SC CN
     family: Hack Nerd Font
     style: Bold
   italic:
@@ -87,8 +85,5 @@ colors:
     cursor: '#00ff00'
 
 key_bindings:
-  - {
-      key: Return,
-      mods: Control|Shift,
-      action: SpawnNewInstance
-    }
+  - {key: Return, mods: Control|Shift, action: SpawnNewInstance}
+  - {key: Back, action: ReceiveChar}
