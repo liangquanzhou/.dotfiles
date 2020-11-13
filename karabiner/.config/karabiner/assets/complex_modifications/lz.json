@@ -382,6 +382,71 @@
                 {
                     "type": "basic",
                     "from": {
+                      "key_code": "r",
+                      "modifiers": {
+                        "optional": [
+                          "any"
+                        ]
+                      }
+                    },
+                    "to": [
+                      {
+                        "key_code": "0"
+                      }
+                    ],
+                    "conditions": [
+                      {
+                        "type": "variable_if",
+                        "name": "lz_personal_space",
+                        "value": 1
+                      }
+                    ]
+                },
+                {
+                "type": "basic",
+                "from": {
+                    "simultaneous": [
+                    {
+                        "key_code": "spacebar"
+                    },
+                    {
+                        "key_code": "r"
+                    }
+                    ],
+                    "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse",
+                    "detect_key_down_uninterruptedly": false,
+                    "to_after_key_up": [
+                        {
+                        "set_variable": {
+                            "name": "lz_personal_space",
+                            "value": 0
+                        }
+                        }
+                    ]
+                    },
+                    "modifiers": {
+                    "optional": [
+                        "any"
+                    ]
+                    }
+                },
+                "to": [
+                    {
+                    "set_variable": {
+                        "name": "lz_personal_space",
+                        "value": 1
+                    }
+                    },
+                    {
+                    "key_code": "0"
+                    }
+                ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
                       "key_code": "q",
                       "modifiers": {
                         "optional": [
