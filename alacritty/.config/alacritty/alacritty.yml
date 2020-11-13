@@ -43,7 +43,7 @@ custom_cursor_colors: true
 cursor:
   style: Block
   unfocused_hollow: true
-  thickness: 1
+  thickness: 0.2
 
 live_config_reload: true
 
