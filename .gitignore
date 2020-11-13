@@ -12,6 +12,9 @@ Icon
 # karabiner backups
 karabiner/.config/karabiner/automatic_backups/
 
+# vim swap file
+vim/.vimrc.swp
+
 # Thumbnails
 ._*
 
