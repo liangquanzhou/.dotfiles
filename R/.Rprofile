@@ -1,9 +1,10 @@
 # setup CRAN mirror, use tsinghua cran source
-options("repos" = c(CRAN="https://mirrors.tuna.tsinghua.edu.cn/CRAN/"))
+options(repos = c(CRAN = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/", CRANextra = 'https://macos.rbind.io'))
 options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")
+options(radian.editing_mode = 'vi')
 
 # auto packages without warnings
-if(interactive()){
+if (interactive()) {
   suppressWarnings(suppressPackageStartupMessages(
     if (!require(pacman)) install.packages("pacman")
   ))

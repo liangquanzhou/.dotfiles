@@ -3,3 +3,7 @@ CXX=clang++
 
 LDFLAGS=-L/usr/local/opt/gettext/lib -L/usr/local/opt/llvm/lib
 CPPFLAGS=-I/usr/local/opt/gettext/include -I/usr/local/opt/llvm/include
+
+CAIRO_CFLAGS=-L/usr/local/Cellar/cairo/1.16.0_3/include/cairo
+CAIRO_LIBS=-I/usr/local/Cellar/cairo/1.16.0_3/cairo/
+
