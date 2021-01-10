@@ -76,15 +76,15 @@ call plug#end()
 
 " lightline
 let g:lightline = {
-      \ 'colorscheme': 'powerline',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name'
-      \ },
-      \ }
+    \ 'colorscheme': 'powerline',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'gitbranch#name'
+    \ },
+    \ }
 
 " rainbow brackets
 let g:rainbow_active=1
@@ -114,7 +114,7 @@ let g:vim_current_word#highlight_current_word = 0
 " undotree
 nnoremap <leader>u :MundoToggle<CR>
 
-" toggle nerd tree
+ "toggle nerd tree
 nnoremap <silent> <leader><C-n> :NERDTreeToggle<CR>
 
 " repl
@@ -124,6 +124,9 @@ let g:slime_target = "tmux"
 let g:slime_past_file = tempname()
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'sql': { 'left': '--','right': '' } }
 
 " -- to be continued --
 
