@@ -41,7 +41,7 @@ nnoremap <leader>x :tabclose<CR>
 
 "let g:omni_sql_no_default_maps = 1
 
-nnoremap <leader>cp : <esc>ggVGy<C-o><CR>
+nnoremap <leader>cp : <esc>ggVGy<C-o>
 
 " ----- buffer option -----
 " quick swithch between buffers
