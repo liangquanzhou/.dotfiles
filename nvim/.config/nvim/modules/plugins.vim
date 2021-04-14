@@ -40,6 +40,18 @@ Plug 'rizzatti/dash.vim'
 " Plug 'sillybun/vim-repl' "doesn't support neovim
 Plug 'jpalardy/vim-slime'
 
+" pandoc and rmarkdown 
+Plug 'vim-pandoc/vim-rmarkdown'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax' 
+
+" markdown prevew
+"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+let g:mkdp_command_for_global = 1
+
+" sublime-text like minimap
+Plug 'wfxr/minimap.vim'
 
 " -- to be continued --
 "Plug 'kassio/neoterm'
@@ -148,3 +160,6 @@ nnoremap <leader>l: TREPLSendLine
 "    \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
 "    \ }
 
+" configuration for vim-pandoc and vim-rmarkdown
+let g:pandoc#modules#disabled = ["folding", "spell"]
+let g:pandoc#syntax#conceal#use = 0
