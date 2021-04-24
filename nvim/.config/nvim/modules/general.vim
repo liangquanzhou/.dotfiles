@@ -181,3 +181,4 @@ autocmd BufReadPost *
 
 set undofile
 set undodir=$HOME/.local/share/nvim/undodir
+set foldmethod=indent

@@ -41,9 +41,9 @@ Plug 'rizzatti/dash.vim'
 Plug 'jpalardy/vim-slime'
 
 " pandoc and rmarkdown 
-Plug 'vim-pandoc/vim-rmarkdown'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax' 
+"Plug 'vim-pandoc/vim-rmarkdown'
+"Plug 'vim-pandoc/vim-pandoc'
+"Plug 'vim-pandoc/vim-pandoc-syntax' 
 
 " markdown prevew
 "Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
@@ -52,6 +52,12 @@ let g:mkdp_command_for_global = 1
 
 " sublime-text like minimap
 Plug 'wfxr/minimap.vim'
+
+" other language support for markdown 
+Plug 'tpope/vim-markdown'
+
+" easy motion:https://github.com/easymotion/vim-easymotion
+Plug 'easymotion/vim-easymotion'
 
 " -- to be continued --
 "Plug 'kassio/neoterm'
@@ -82,7 +88,6 @@ Plug 'scrooloose/nerdtree'
 
 " Initialize plugin system
 call plug#end()
-
 
 " -------------------- vim-plug settings --------------------
 
@@ -163,3 +168,8 @@ nnoremap <leader>l: TREPLSendLine
 " configuration for vim-pandoc and vim-rmarkdown
 let g:pandoc#modules#disabled = ["folding", "spell"]
 let g:pandoc#syntax#conceal#use = 0
+
+" enable fenced code bolock syntax highlighting
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'sql', 'r']
+let g:markdown_syntax_conceal = 0
+

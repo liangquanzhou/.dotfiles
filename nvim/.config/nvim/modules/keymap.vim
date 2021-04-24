@@ -51,3 +51,7 @@ nnoremap <leader>cp : <esc>ggVGy<C-o>
 " delete buffer
 "nnoremap <leader>bd :bufferdelete<CR>
 
+" insert R pipe line
+"inoremap <C-l> %>% 
+"inoremap <C-i> %in% 
+"inoremap <C-k> <- 
