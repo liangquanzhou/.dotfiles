@@ -21,9 +21,17 @@ nnoremap ]e  :<C-u>execute 'move +'. v:count1<cr>
 
 " insert 模式下用ctrl a 和 ctrl e
 inoremap <C-e> <End>
-inoremap <C-a> <Home>
+"inoremap <C-a> <Home>
+inoremap <C-a> <Esc><S-i>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
+
+" insert 模式下用crtl h 和 crtl l代表 backspace 和 del
+inoremap <C-h> <BS>
+inoremap <C-l> <Del>
+
+" insert 模式下用ctrl k 删除从光标到最后并写入黑洞寄存器
+inoremap <C-k> <C-o>"_D
 
 " clear search highlight by pressing C-l
 nnoremap <silent><C-l> :nohlsearch<CR>
@@ -52,6 +60,6 @@ nnoremap <leader>cp : <esc>ggVGy<C-o>
 "nnoremap <leader>bd :bufferdelete<CR>
 
 " insert R pipe line
-"inoremap <C-l> %>% 
-"inoremap <C-i> %in% 
-"inoremap <C-k> <- 
+"inoremap <C-l> %>%
+"inoremap <C-i> %in%
+"inoremap <C-k> <-

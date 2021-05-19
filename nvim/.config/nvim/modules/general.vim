@@ -93,10 +93,10 @@ set number
 set relativenumber
 
 " highlight current line
-set cursorline
+"set cursorline
 
 " textwidth
-set textwidth=100
+"set textwidth=100
 
 " show cursor position all the time
 set ruler
@@ -120,6 +120,8 @@ set splitbelow
 
 " highlight search result
 set hlsearch
+hi Search ctermbg=Yellow
+hi Search ctermfg=Red
 
 " set case inseneitive, to remove it, set noic
 set ignorecase
@@ -180,5 +182,9 @@ autocmd BufReadPost *
 "set path+=**
 
 set undofile
-set undodir=$HOME/.local/share/nvim/undodir
-set foldmethod=indent
+"set undodir=$HOME/.local/share/nvim/undodir
+"set foldmethod=indent
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
