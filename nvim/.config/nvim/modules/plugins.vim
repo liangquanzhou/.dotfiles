@@ -2,96 +2,9 @@ call plug#begin(stdpath('data') . '/plugged')
 
 " Molokai theme
 Plug 'tomasr/molokai'
+
 " status bar
 Plug 'itchyny/lightline.vim'
-" show gitbrach in status bar
-Plug 'itchyny/vim-gitbranch'
-" show icons
-Plug 'ryanoasis/vim-devicons'
-" rainbow brankets
-Plug 'luochen1990/rainbow'
-" accelerated j k
-Plug 'rhysd/accelerated-jk'
-" show git changes
-Plug 'airblade/vim-gitgutter'
-" easy-align (https://github.com/junegunn/vim-easy-align)
-Plug 'junegunn/vim-easy-align'
-" show current word
-Plug 'dominikduda/vim_current_word'
-" lastspace (https://github.com/farmergreg/vim-lastplace)
-"Plug 'farmergreg/vim-lastplace'
-"let g:lastplace_open_folds = 0
-" start vim with recent files
-Plug 'mhinz/vim-startify'
-" undotree
-Plug 'simnalamburt/vim-mundo'
-" vim surround: https://github.com/tpope/vim-surround
-Plug 'tpope/vim-surround'
-" Plugins for commentary
-Plug 'tpope/vim-commentary'
-Plug 'preservim/nerdcommenter'
-" enhanced visual selection (https://github.com/mg979/vim-visual-multi/wiki/Quick-start)
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-" display thin vertical lines for each indent level
-Plug 'Yggdroot/indentLine'
-" dash API (https://github.com/rizzatti/dash.vim)
-Plug 'rizzatti/dash.vim'
-" repl plugin, use vim-slime
-" Plug 'sillybun/vim-repl' "doesn't support neovim
-Plug 'jpalardy/vim-slime'
-
-" pandoc and rmarkdown 
-"Plug 'vim-pandoc/vim-rmarkdown'
-"Plug 'vim-pandoc/vim-pandoc'
-"Plug 'vim-pandoc/vim-pandoc-syntax' 
-
-" markdown prevew
-"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-let g:mkdp_command_for_global = 1
-
-" sublime-text like minimap
-Plug 'wfxr/minimap.vim'
-
-" other language support for markdown 
-Plug 'tpope/vim-markdown'
-
-" easy motion:https://github.com/easymotion/vim-easymotion
-Plug 'easymotion/vim-easymotion'
-
-" -- to be continued --
-"Plug 'kassio/neoterm'
-"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-Plug 'sbdchd/neoformat'
-
-" R language support
-Plug 'jalvesaq/Nvim-R'
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'roxma/nvim-yarp'
-Plug 'gaalcaras/ncm-R'
-
-" todo: learn how to use snippets
-" vim snippets
-" Plug 'sirver/UltiSnips'
-" Plug 'ncm2/ncm2-ultisnips'
-"Plug 'lervag/vimtex'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-" Plug 'honza/vim-snippets'
-Plug 'zxqfl/tabnine-vim'
-Plug 'tpope/vim-sensible'
-"Plug 'vim-scripts/taglist.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdtree'
-
-" Initialize plugin system
-call plug#end()
-
-" -------------------- vim-plug settings --------------------
-
-" lightline
 let g:lightline = {
     \ 'colorscheme': 'powerline',
     \ 'active': {
@@ -103,52 +16,148 @@ let g:lightline = {
     \ },
     \ }
 
-" rainbow brackets
+" show gitbrach in status bar
+Plug 'itchyny/vim-gitbranch'
+
+" show icons
+Plug 'ryanoasis/vim-devicons'
+
+" rainbow brankets
+Plug 'luochen1990/rainbow'
 let g:rainbow_active=1
 
-" Molokai theme
-colorscheme molokai
-let g:rehash256 = 1
-
-" accelerated-jk
+" accelerated j k
+Plug 'rhysd/accelerated-jk'
 nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
 let g:accelerated_jk_acceleration_table = [2, 4, 7, 15]
 
 " show git changes
+Plug 'airblade/vim-gitgutter'
 let g:gitgutter_map_keys = 0
 
-" vim easy align
+" easy-align (https://github.com/junegunn/vim-easy-align)
+Plug 'junegunn/vim-easy-align'
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-" show current word in normal mode
+" show current word
+Plug 'RRethy/vim-illuminate'
+let g:Illuminate_insert_mode_highlight = 1
+"Plug 'dominikduda/vim_current_word'
 "let g:vim_current_word#enabled = 1
-let g:vim_current_word#highlight_current_word = 0
+"let g:vim_current_word#highlight_current_word = 0
+
+"Plug 'inkarkat/vim-SearchHighlighting'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+
+" semantic highlighting
+"Plug 'jaxbot/semantic-highlight.vim'
+" lastspace (https://github.com/farmergreg/vim-lastplace)
+"Plug 'farmergreg/vim-lastplace'
+"let g:lastplace_open_folds = 0
+" start vim with recent files
+Plug 'mhinz/vim-startify'
 
 " undotree
+Plug 'simnalamburt/vim-mundo'
 nnoremap <leader>u :MundoToggle<CR>
 
- "toggle nerd tree
-nnoremap <silent> <leader><C-n> :NERDTreeToggle<CR>
+" vim surround: https://github.com/tpope/vim-surround
+Plug 'tpope/vim-surround'
 
-" repl
+" Plugins for commentary
+Plug 'tpope/vim-commentary'
+
+Plug 'preservim/nerdcommenter'
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'sql': { 'left': '--','right': '' } }
+
+" enhanced visual selection (https://github.com/mg979/vim-visual-multi/wiki/Quick-start)
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+" display thin vertical lines for each indent level
+Plug 'Yggdroot/indentLine'
+
+" dash API (https://github.com/rizzatti/dash.vim)
+Plug 'rizzatti/dash.vim'
+
+" repl plugin, use vim-slime
+" Plug 'sillybun/vim-repl' "doesn't support neovim
+"nnoremap <leader>r :REPLToggle
+"nnoremap <leader>l: TREPLSendLine
+
+Plug 'jpalardy/vim-slime'
 " nnoremap <leader>r :REPLToggle
 " nnoremap <leader>l: TREPLSendLine
 let g:slime_target = "tmux"
 let g:slime_past_file = tempname()
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 
+" pandoc and rmarkdown 
+"Plug 'vim-pandoc/vim-rmarkdown'
+"Plug 'vim-pandoc/vim-pandoc'
+"Plug 'vim-pandoc/vim-pandoc-syntax' 
+" configuration for vim-pandoc and vim-rmarkdown
+"let g:pandoc#modules#disabled = ["folding", "spell"]
+"let g:pandoc#syntax#conceal#use = 0
 
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'sql': { 'left': '--','right': '' } }
+" markdown mathjax support (https://github.com/iamcco/mathjax-support-for-mkdp)
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/markdown-preview.vim'
+
+" markdown prevew (https://github.com/iamcco/markdown-preview.nvim)
+"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+"let g:mkdp_command_for_global = 1
+
+" sublime-text like minimap
+"Plug 'wfxr/minimap.vim'
+
+" other language support for markdown 
+"Plug 'tpope/vim-markdown'
+"必要插件，安装在vim-markdown前面
+Plug 'godlygeek/tabular' 
+Plug 'plasticboy/vim-markdown'
+" enable fenced code bolock syntax highlighting
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'sql', 'r']
+let g:markdown_syntax_conceal = 0
+"let g:vim_markdown_math = 1
+" disable header folding
+let g:vim_markdown_folding_disabled = 0
+
+" do not use conceal feature, the implementation is not so good
+let g:vim_markdown_conceal = 0
+
+" disable math tex conceal feature
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+
+" support front matter of various format
+let g:vim_markdown_frontmatter = 1  " for YAML format
+let g:vim_markdown_toml_frontmatter = 1  " for TOML format
+let g:vim_markdown_json_frontmatter = 1  " for JSON format
+
+" easy motion:https://github.com/easymotion/vim-easymotion
+Plug 'easymotion/vim-easymotion'
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " -- to be continued --
-
-let g:omni_sql_no_default_maps = 1
-
+"Plug 'kassio/neoterm'
+"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'sbdchd/neoformat'
 " sql formatter: sqlparse
 "let g:neoformat_python_sqlparse = {
 "            \ 'exe': 'sqlparse',
@@ -157,19 +166,58 @@ let g:omni_sql_no_default_maps = 1
 "
 "let g:neoformat_enabled_sql = ['sqlparse']
 
-nnoremap <leader>r :REPLToggle
-nnoremap <leader>l: TREPLSendLine
+" R language support
+Plug 'jalvesaq/Nvim-R'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'roxma/nvim-yarp'
+Plug 'gaalcaras/ncm-R'
 
+" todo: learn how to use snippets
+" vim snippets
+Plug 'sirver/UltiSnips'
+Plug 'honza/vim-snippets'
+" snip settings
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+" Plug 'ncm2/ncm2-ultisnips'
+
+"Plug 'lervag/vimtex'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+"Plug 'codota/tabnine-vim'
+Plug 'tpope/vim-sensible'
+
+"Plug 'vim-scripts/taglist.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'scrooloose/nerdtree'
+nnoremap <silent> <leader><C-n> :NERDTreeToggle<CR>
+
+" Language server protocal
+Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
 "" languageserver for R
 "let g:LanguageClient_serverCommands = {
 "    \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
 "    \ }
 
-" configuration for vim-pandoc and vim-rmarkdown
-let g:pandoc#modules#disabled = ["folding", "spell"]
-let g:pandoc#syntax#conceal#use = 0
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 
-" enable fenced code bolock syntax highlighting
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'sql', 'r']
-let g:markdown_syntax_conceal = 0
+" Initialize plugin system
+call plug#end()
 
+colorscheme molokai
+let g:rehash256 = 1
+
+" -- to be continued --
+
+let g:omni_sql_no_default_maps = 1
