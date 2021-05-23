@@ -1,0 +1,69 @@
+{
+    "title": "Edit Rules",
+    "rules": [
+        {
+            "description": "Left_Ctrl + W to back delete a word",
+            "manipulators": [
+                {
+                  "type": "basic",
+                  "from": {
+                    "key_code": "w",
+                    "modifiers": {
+                      "mandatory": [
+                        "left_control"
+                      ]
+                    }
+                  },
+                  "to": [
+                    {
+                      "key_code": "delete_or_backspace",
+                      "modifiers": [
+                        "left_option"
+                      ]
+                    }
+                  ],
+                  "conditions": [
+                                {
+                                  "type": "frontmost_application_unless",
+                                  "bundle_identifiers": [
+                                    "^com\\.googlecode\\.iterm2$"
+                                  ]
+                                }
+                              ]
+                }
+            ]
+        },
+        {
+            "description": "Left_Ctrl + U to back delete to the beginning of the line",
+            "manipulators": [
+                {
+                  "type": "basic",
+                  "from": {
+                    "key_code": "u",
+                    "modifiers": {
+                      "mandatory": [
+                        "left_control"
+                      ]
+                    }
+                  },
+                  "to": [
+                    {
+                      "key_code": "delete_or_backspace",
+                      "modifiers": [
+                        "left_command"
+                      ]
+                    }
+                  ],
+                  "conditions": [
+                                {
+                                  "type": "frontmost_application_unless",
+                                  "bundle_identifiers": [
+                                    "^com\\.googlecode\\.iterm2$"
+                                  ]
+                                }
+                              ]
+                }
+            ]
+        }
+    ]
+}
