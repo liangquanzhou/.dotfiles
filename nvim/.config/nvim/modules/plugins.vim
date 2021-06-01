@@ -1,7 +1,10 @@
 call plug#begin(stdpath('data') . '/plugged')
 
-" Molokai theme
+" Monokai theme
 Plug 'tomasr/molokai'
+"Plug 'sickill/vim-monokai'
+"Plug 'crusoexia/vim-monokai'
+"Plug 'patstockwell/vim-monokai-tasty'
 
 " status bar
 Plug 'itchyny/lightline.vim'
@@ -51,7 +54,7 @@ let g:Illuminate_insert_mode_highlight = 1
 "let g:vim_current_word#highlight_current_word = 0
 
 "Plug 'inkarkat/vim-SearchHighlighting'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+"Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " semantic highlighting
 "Plug 'jaxbot/semantic-highlight.vim'
@@ -156,7 +159,7 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " -- to be continued --
 "Plug 'kassio/neoterm'
-"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'sbdchd/neoformat'
 " sql formatter: sqlparse
 "let g:neoformat_python_sqlparse = {

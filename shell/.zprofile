@@ -1,5 +1,7 @@
+
 # alias 
 alias vim=nvim
+alias b=buku
 
 # variables
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
@@ -8,20 +10,29 @@ export EDITOR=/usr/local/bin/nvim
 export DOTNET_ROOT=/usr/local/opt/dotnet/libexec
 export SHELL=/usr/local/bin/zsh
 export JAVA_HOME=/usr/local/opt/java/libexec/openjdk.jdk/Contents/Home
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export GOPATH="$XDG_DATA_HOME"/go
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+#export GEM_HOME="$XDG_DATA_HOME"/gem
+#export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
+export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 
 # path
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/opt/X11/bin:$PATH
 export PATH=/usr/local/opt/libxml2/bin:$PATH
 export PATH=/usr/local/opt/openjdk/bin:$PATH
 export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH=/usr/local/opt/tcl-tk/bin:$PATH
 export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
-export PATH=$PATH:$GOPATH/bin
-export GOPATH=$HOME/go
+export PATH=/usr/local/opt/curl/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
+export PATH=$CARGO_HOME/bin:$PATH
 
 # flags
 export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
@@ -53,4 +64,3 @@ rmdwiki(){
     Rscript -e "library(conflr);confl_create_post_from_Rmd('$1', interactive = FALSE, updaet = TRUE)"
 }
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

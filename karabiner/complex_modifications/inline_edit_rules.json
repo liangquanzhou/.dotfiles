@@ -26,7 +26,8 @@
                                 {
                                   "type": "frontmost_application_unless",
                                   "bundle_identifiers": [
-                                    "^com\\.googlecode\\.iterm2$"
+                                    "^com\\.googlecode\\.iterm2$",
+                                    "^io\\.alacritty$"
                                   ]
                                 }
                               ]
@@ -58,7 +59,8 @@
                                 {
                                   "type": "frontmost_application_unless",
                                   "bundle_identifiers": [
-                                    "^com\\.googlecode\\.iterm2$"
+                                    "^com\\.googlecode\\.iterm2$",
+                                    "^io\\.alacritty$"
                                   ]
                                 }
                               ]

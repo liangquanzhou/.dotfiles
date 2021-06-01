@@ -3,30 +3,29 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 # zsh theme
-zplug "themes/robbyrussell", from:oh-my-zsh
+#zplug "themes/robbyrussell", from:oh-my-zsh
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
 # zsh plugins
 zplug "lib/*", from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
+#zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/gitfast", from:oh-my-zsh
 zplug "plugins/git-extras", from:oh-my-zsh
 zplug "plugins/gitignore", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
-zplug "plugins/tmux", from:oh-my-zsh
+#zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/colorize", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/autojump", from:oh-my-zsh
 
 #zplug "junegunn/fzf-bin", from:gh-r, as:command, use:"*darwin*amd6*", rename-to:fzf
 
-zplug "djui/alias-tips"
+#zplug "djui/alias-tips"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting"
-
-#zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # check, load, install
 zplug check || zplug install
