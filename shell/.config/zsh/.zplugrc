@@ -8,7 +8,7 @@ zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
 # zsh plugins
 zplug "lib/*", from:oh-my-zsh
-#zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/gitfast", from:oh-my-zsh
 zplug "plugins/git-extras", from:oh-my-zsh
 zplug "plugins/gitignore", from:oh-my-zsh
@@ -16,12 +16,13 @@ zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
 #zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/colorize", from:oh-my-zsh
-zplug "plugins/vi-mode", from:oh-my-zsh
+#zplug "plugins/vi-mode", from:oh-my-zsg
 zplug "plugins/autojump", from:oh-my-zsh
 
 #zplug "junegunn/fzf-bin", from:gh-r, as:command, use:"*darwin*amd6*", rename-to:fzf
-
-#zplug "djui/alias-tips"
+#zplug "zpm-zsh/tmux"
+zplug "djui/alias-tips"
+zplug "jeffreytse/zsh-vi-mode"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"

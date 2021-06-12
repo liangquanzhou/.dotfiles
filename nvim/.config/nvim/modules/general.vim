@@ -54,7 +54,7 @@ set shell=/usr/local/bin/zsh
 
 " systemwide clipboard
 set clipboard=unnamed
-"set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/local/opt/fzf
 
 " Required to keep multiple buffers open multiple buffers
 set hidden 
@@ -93,7 +93,7 @@ set number
 set relativenumber
 
 " highlight current line
-"set cursorline
+set cursorline
 
 " textwidth
 "set textwidth=100
@@ -134,7 +134,7 @@ set smartcase
 set incsearch
 
 " match brankets
-"set showmatch
+set showmatch
 
 " 5. Editing settings
 
@@ -188,3 +188,8 @@ augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
+
+
+"https://github.com/tmux/tmux/issues/2059
+"let &t_SI = "\e[5 q"
+"let &t_EI = "\e[2 q"

@@ -1,18 +1,18 @@
+dyn.load('/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/lib/server/libjvm.dylib')
+
 # setup CRAN mirror, use tsinghua cran source
 options(repos = c(CRAN = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/", CRANextra = 'https://macos.rbind.io'))
 options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")
-options(radian.editing_mode = 'vi')
 
-# auto packages without warnings
+# load packages without warnings
 if (interactive()) {
   suppressWarnings(suppressPackageStartupMessages(
-    if (!require(pacman)) install.packages("pacman")
+  if (!require(pacman)) utils::install.packages("pacman", repos = 'http://mirror.tuna.tsinghua.edu.cn/CRAN/', quite = TRUE)
   ))
-  invisible(pacman::p_load(stats, tidyverse, magrittr, RPresto, DT, parallel, DBI, scales, lubridate, dbplyr, readxl, clipr, reticulate, conflr))
 }
 
 # source personal settings
-try(source(paste0("~/.Rprofile.", system('whoami',intern = T), ".R")), silent = T)
+try(source(paste0("~/.", system('whoami',intern = T), ".Rprofile")), silent = T)
 
 # always want stringAsFactors = FALSE
 options(stringsAsFactors = FALSE)
@@ -21,21 +21,17 @@ options(stringsAsFactors = FALSE)
 options(max.print = 100)
 
 # tweak the prompt in console
-options(prompt="> ", dights = 3, continue = " ")
+options(prompt = "> ", dights = 3, continue = "  ")
 
 # Setting 'scipen=10' to not  use scientific notation to express very small or large numbers
-options(scipen=10)
+options(scipen = 10)
 
 # create an empty environment for self defined functions
 .env <- new.env()
 
-# # Don't save workspace by default
-# .env$q <- function (save="no", ...) {
-#   quit(save=save, ...)
-# }
-
 # Returns a logical vector TRUE for elements of X not in Y
-.env$"%nin%" <- function(x, y) !(x %in% y)
+.env$"%nin%" <- function(x, y)
+  !(x %in% y)
 
 # read sql script
 .env$getSQL <- function(filepath) {
@@ -54,21 +50,6 @@ options(scipen=10)
   }
   close(con)
   return(sql.string)
-}
-
-# Jupyter notebook Chinese support: this is the default display by IRkernel
-.env$show_plot <- function(p, width = NULL, height = NULL) {
-  if (is.null(width)) {
-    width <- getOption("repr.plot.width", 3)
-  }
-  if (is.null(height)) {
-    height <- getOption("repr.plot.height", 3)
-  }
-  filename <- paste(tempfile(pattern = "jupyter-"), ".png", sep = "")
-  png(filename, width = width, height = height, units = "in", res = 120)
-  print(p)
-  dev.off()
-  IRdisplay::display_png(file = filename)
 }
 
 # conflr attachment function
@@ -112,10 +93,25 @@ options(scipen=10)
 
   # return the link used in markdown
   result <- confl_list_attachments(page_id, filename = basename(path))
-
   # this link can be referenced in rmarkdown
   attachment_preview_link <- paste0(result[['_links']][['base']], result[['results']][[1]][['_links']][['webui']])
   return(attachment_preview_link)
+}
+
+# Jupyter notebook Chinese support.This is the default display by IRkernel
+
+.env$show_plot <- function(p, width = NULL, height = NULL) {
+  if (is.null(width)) {
+    width <- getOption("repr.plot.width", 3)
+  }
+  if (is.null(height)) {
+    height <- getOption("repr.plot.height", 3)
+  }
+  filename <- paste(tempfile(pattern = "jupyter-"), ".png", sep = "")
+  png(filename, width = width, height = height, units = "in", res = 120)
+  print(p)
+  dev.off()
+  IRdisplay::display_png(file = filename)
 }
 
 attach(.env)

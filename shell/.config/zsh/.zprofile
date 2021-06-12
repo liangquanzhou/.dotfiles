@@ -7,19 +7,27 @@ alias b=buku
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export RSTUDIO_PANDOC=/Applications/RStudio.app/Contents/MacOS/pandoc # pandoc for run R in cli
 export EDITOR=/usr/local/bin/nvim
-export DOTNET_ROOT=/usr/local/opt/dotnet/libexec
+#export DOTNET_ROOT=/usr/local/opt/dotnet/libexec
 export SHELL=/usr/local/bin/zsh
-export JAVA_HOME=/usr/local/opt/java/libexec/openjdk.jdk/Contents/Home
+#export JAVA_HOME=/usr/local/opt/java/libexec/openjdk.jdk/Contents/Home
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GOPATH="$XDG_DATA_HOME"/go
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+#export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 #export GEM_HOME="$XDG_DATA_HOME"/gem
 #export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql/history
+export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export VIMDOTDIR="$XDG_CONFIG_HOME/vim"
+export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
+export SPARK_CONF_DIR=$XDG_CONFIG_HOME/apache-spark
 
 # path
 export PATH=/usr/local/sbin:$PATH
@@ -31,6 +39,10 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH=/usr/local/opt/tcl-tk/bin:$PATH
 export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
 export PATH=/usr/local/opt/curl/bin:$PATH
+export PATH=/usr/local/opt/llvm/bin:$PATH
+export PATH=/usr/local/opt/gcc/bin:$PATH
+export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
+
 export PATH=$GOPATH/bin:$PATH
 export PATH=$CARGO_HOME/bin:$PATH
 
@@ -61,6 +73,10 @@ maccopy() {
 }
 
 rmdwiki(){
-    Rscript -e "library(conflr);confl_create_post_from_Rmd('$1', interactive = FALSE, updaet = TRUE)"
+    Rscript -e "library(conflr);confl_create_post_from_Rmd('$1', interactive = FALSE, update = TRUE)"
 }
 
+HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+if [ -f "$HB_CNF_HANDLER" ]; then
+source "$HB_CNF_HANDLER";
+fi

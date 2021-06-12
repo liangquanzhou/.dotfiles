@@ -4,8 +4,10 @@
 	name = Liangquan Zhou
 	email = liangquanzhou@gmail.com
 [core]
-	excludesfile = ~/.gitignore
+	excludesFile = $XDG_CONFIG_HOME/git/ignore
+    quotePath = false
 [init]
-	templatedir = ~/.git-templates
+	;templateDir = $HOME/.git-template
+	defaultBranch = master
 [icdiff]
 	options = --highlight --line-numbers

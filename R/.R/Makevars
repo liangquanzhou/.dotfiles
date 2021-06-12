@@ -1,9 +1,13 @@
-CC=clang
-CXX=clang++
-
 LDFLAGS=-L/usr/local/opt/gettext/lib -L/usr/local/opt/llvm/lib
 CPPFLAGS=-I/usr/local/opt/gettext/include -I/usr/local/opt/llvm/include
 
-CAIRO_CFLAGS=-L/usr/local/Cellar/cairo/1.16.0_3/include/cairo
-CAIRO_LIBS=-I/usr/local/Cellar/cairo/1.16.0_3/cairo/
+CLANG=/usr/local/opt/llvm
+CC=$(CLANG)/bin/clang
+CXX=$(CLANG)/bin/clang++
+CXX1X=$(CLANG)/bin/clang++
+CXXFLAGS=-I$(CLANG)/include
 
+FLIBS =  -L/usr/local/opt/gcc/lib/gcc/11 -lgfortran -lquadmath -lm
+
+CAIRO_CFLAGS=-L/usr/local/opt/cairo/include/cairo
+CAIRO_LIBS=-I/usr/local/opt/cairo/lib/cairo/

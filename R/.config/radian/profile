@@ -68,5 +68,18 @@ options(radian.stderr_format = "\033[0;31m{}\033[0m")
 options(radian.force_reticulate_python = FALSE)
 # enable reticulate prompt and trigger `~`
 options(radian.enable_reticulate_prompt = TRUE)
+options(
+    radian.vi_mode_prompt = list(
+        "ins" = "(I) ",
+        "nav" = "(N) ",
+        "rep" = "(R) "
+    )
+)
+options(radian.emacs_bindings_in_vi_insert_mode = TRUE)
+library(colorout)
 
+options(radian.escape_key_map = list(
+    list(key = ".", value = " %>% "),
+    list(key = ",", value = " <- ")
+))
 

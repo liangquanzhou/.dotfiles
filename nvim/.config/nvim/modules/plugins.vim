@@ -26,8 +26,12 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'ryanoasis/vim-devicons'
 
 " rainbow brankets
-Plug 'luochen1990/rainbow'
-let g:rainbow_active=1
+"Plug 'luochen1990/rainbow'
+"let g:rainbow_active=1
+Plug 'junegunn/rainbow_parentheses.vim'
+let g:rainbow#max_level = 16
+autocmd VimEnter * RainbowParentheses
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['<', '>'], ['{', '}']]
 
 " accelerated j k
 Plug 'rhysd/accelerated-jk'
@@ -47,8 +51,9 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " show current word
-Plug 'RRethy/vim-illuminate'
-let g:Illuminate_insert_mode_highlight = 1
+"Plug 'RRethy/vim-illuminate'
+"let g:Illuminate_insert_mode_highlight = 1
+Plug 'itchyny/vim-cursorword'
 "Plug 'dominikduda/vim_current_word'
 "let g:vim_current_word#enabled = 1
 "let g:vim_current_word#highlight_current_word = 0
@@ -83,9 +88,12 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " display thin vertical lines for each indent level
 Plug 'Yggdroot/indentLine'
+let g:indentLine_setConceal = 0
+Plug 'elzr/vim-json'
+let g:vim_json_syntax_conceal = 0
 
 " dash API (https://github.com/rizzatti/dash.vim)
-Plug 'rizzatti/dash.vim'
+"Plug 'rizzatti/dash.vim'
 
 " repl plugin, use vim-slime
 " Plug 'sillybun/vim-repl' "doesn't support neovim
@@ -100,12 +108,12 @@ let g:slime_past_file = tempname()
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 
 " pandoc and rmarkdown 
-"Plug 'vim-pandoc/vim-rmarkdown'
-"Plug 'vim-pandoc/vim-pandoc'
-"Plug 'vim-pandoc/vim-pandoc-syntax' 
+Plug 'vim-pandoc/vim-rmarkdown'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax' 
 " configuration for vim-pandoc and vim-rmarkdown
-"let g:pandoc#modules#disabled = ["folding", "spell"]
-"let g:pandoc#syntax#conceal#use = 0
+let g:pandoc#modules#disabled = ["folding", "spell"]
+let g:pandoc#syntax#conceal#use = 0
 
 " markdown mathjax support (https://github.com/iamcco/mathjax-support-for-mkdp)
 Plug 'iamcco/mathjax-support-for-mkdp'
@@ -118,6 +126,11 @@ Plug 'iamcco/markdown-preview.vim'
 
 " sublime-text like minimap
 "Plug 'wfxr/minimap.vim'
+"let g:minimap_width = 10
+"let g:minimap_auto_start = 1
+"let g:minimap_auto_start_win_enter = 1
+"hi MinimapCurrentLine ctermfg=Green guifg=#50FA7B guibg=#32302f
+"let g:minimap_highlight = 'MinimapCurrentLine'
 
 " other language support for markdown 
 "Plug 'tpope/vim-markdown'
@@ -133,6 +146,7 @@ let g:vim_markdown_folding_disabled = 0
 
 " do not use conceal feature, the implementation is not so good
 let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 " disable math tex conceal feature
 let g:tex_conceal = ""
@@ -141,7 +155,12 @@ let g:vim_markdown_math = 1
 " support front matter of various format
 let g:vim_markdown_frontmatter = 1  " for YAML format
 let g:vim_markdown_toml_frontmatter = 1  " for TOML format
-let g:vim_markdown_json_frontmatter = 1  " for JSON format
+"let g:vim_markdown_json_frontmatter = 1  " for JSON format
+
+Plug 'chrisbra/csv.vim'
+Plug 'chrisbra/Colorizer'
+let g:colorizer_auto_color = 1
+let g:colorizer_colornames = 0
 
 " easy motion:https://github.com/easymotion/vim-easymotion
 Plug 'easymotion/vim-easymotion'
@@ -159,7 +178,6 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " -- to be continued --
 "Plug 'kassio/neoterm'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'sbdchd/neoformat'
 " sql formatter: sqlparse
 "let g:neoformat_python_sqlparse = {
@@ -171,11 +189,11 @@ Plug 'sbdchd/neoformat'
 
 " R language support
 Plug 'jalvesaq/Nvim-R'
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'roxma/nvim-yarp'
-Plug 'gaalcaras/ncm-R'
+"Plug 'ncm2/ncm2'
+"Plug 'ncm2/ncm2-bufword'
+"Plug 'ncm2/ncm2-path'
+"Plug 'roxma/nvim-yarp'
+"Plug 'gaalcaras/ncm-R'
 
 " todo: learn how to use snippets
 " vim snippets
@@ -200,6 +218,10 @@ Plug 'tpope/vim-sensible'
 
 "Plug 'vim-scripts/taglist.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+autocmd FileType markdown,rmd let b:coc_pairs = [["$", "$"]]
+"autocmd FileType markdown let b:coc_pairs_disabled = ['`']
+autocmd FileType r,rmd let b:coc_pairs_disabled = ['<']
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 Plug 'scrooloose/nerdtree'
 nnoremap <silent> <leader><C-n> :NERDTreeToggle<CR>
@@ -213,7 +235,7 @@ Plug 'kabouzeid/nvim-lspinstall'
 "    \ }
 
 " treesitter
-Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
+"Plug 'nvim-treesitter/nvim-treesitteg', {'do': 'TSUpdate'}
 
 " Initialize plugin system
 call plug#end()

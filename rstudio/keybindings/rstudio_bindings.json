@@ -1,0 +1,11 @@
+{
+    "activateConsole": "Cmd+2",
+    "activateHelp": "Cmd+3",
+    "activateSource": "Cmd+1",
+    "insertAssignmentOperator": "Shift+Cmd+,",
+    "insertPipeOperator": "Shift+Cmd+.",
+    "closeSourceDoc": "Cmd+W",
+    "goToFileFunction": "Cmd+.",
+    "openProfile": "",
+    "forceQuitSession": "Ctrl+Q"
+}

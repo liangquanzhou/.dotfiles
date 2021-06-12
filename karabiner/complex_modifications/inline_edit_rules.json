@@ -66,6 +66,92 @@
                               ]
                 }
             ]
+        },
+        {
+            "description": "R assign",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "comma",
+                      "modifiers": {
+                        "mandatory": [
+                          "left_control"
+                        ]
+                      }
+                    },
+                    "to": [
+                        {
+                          "key_code": "comma",
+                          "modifiers": [
+                            "left_shift"
+                          ]
+                        },
+                        {
+                          "key_code": "hyphen"
+                        },
+                        {
+                          "key_code": "spacebar"
+                        }
+                    ],
+                    "conditions": [
+                      {
+                        "type": "frontmost_application_unless",
+                        "bundle_identifiers": [
+                          "^org\\.rstudio\\.RStudio$"
+                        ]
+                      }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "R pipe",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "period",
+                      "modifiers": {
+                        "mandatory": [
+                          "left_control"
+                        ]
+                      }
+                    },
+                    "to": [
+                        {
+                          "key_code": "5",
+                          "modifiers": [
+                            "left_shift"
+                          ]
+                        },
+                        {
+                          "key_code": "period",
+                          "modifiers": [
+                            "left_shift"
+                          ]
+                        },
+                        {
+                          "key_code": "5",
+                          "modifiers":[
+                            "left_shift"
+                          ]
+                        },
+                        {
+                          "key_code": "spacebar"
+                        }
+                    ],
+                    "conditions": [
+                      {
+                        "type": "frontmost_application_unless",
+                        "bundle_identifiers": [
+                          "^org\\.rstudio\\.RStudio$"
+                        ]
+                      }
+                    ]
+                }
+            ]
         }
     ]
 }
+
