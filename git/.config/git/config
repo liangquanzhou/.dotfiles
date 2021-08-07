@@ -7,7 +7,7 @@
 	excludesFile = $XDG_CONFIG_HOME/git/ignore
     quotePath = false
 [init]
-	;templateDir = $HOME/.git-template
+	templateDir = $XDG_DATA_HOME/git/template
 	defaultBranch = master
 [icdiff]
 	options = --highlight --line-numbers

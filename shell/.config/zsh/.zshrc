@@ -13,7 +13,6 @@ setopt share_history          # share command history data
 source $XDG_CONFIG_HOME/zsh/.zplugrc
 
 # source global settings
-# source ~/.bash_profile
 source $XDG_CONFIG_HOME/zsh/.zprofile
 
 # source personal settings

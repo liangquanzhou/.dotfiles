@@ -1,16 +1,16 @@
-
 # alias 
 alias vim=nvim
 alias b=buku
 
 # variables
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+#export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export RSTUDIO_PANDOC=/Applications/RStudio.app/Contents/MacOS/pandoc # pandoc for run R in cli
 export EDITOR=/usr/local/bin/nvim
 #export DOTNET_ROOT=/usr/local/opt/dotnet/libexec
 export SHELL=/usr/local/bin/zsh
 #export JAVA_HOME=/usr/local/opt/java/libexec/openjdk.jdk/Contents/Home
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GOPATH="$XDG_DATA_HOME"/go
@@ -28,6 +28,8 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export VIMDOTDIR="$XDG_CONFIG_HOME/vim"
 export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
 export SPARK_CONF_DIR=$XDG_CONFIG_HOME/apache-spark
+export TASKRC=$XDG_CONFIG_HOME/task/taskrc
+export TASKDATA=$XDG_DATA_HOME/task
 
 # path
 export PATH=/usr/local/sbin:$PATH
@@ -40,22 +42,20 @@ export PATH=/usr/local/opt/tcl-tk/bin:$PATH
 export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
 export PATH=/usr/local/opt/curl/bin:$PATH
 export PATH=/usr/local/opt/llvm/bin:$PATH
-export PATH=/usr/local/opt/gcc/bin:$PATH
-export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
 
 export PATH=$GOPATH/bin:$PATH
 export PATH=$CARGO_HOME/bin:$PATH
 
 # flags
-export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
+#export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
 export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
+#export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
-export PKG_CONFIG_PATH="/usr/X11/lib/pkgconfig"
+#export PKG_CONFIG_PATH="/usr/X11/lib/pkgconfig"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig/gtk+-2.0.pc"
-export PKG_CONFIG_PATH="/usr/local/opt/libglade/lib/pkgconfig"
-export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
+#export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig/gtk+-2.0.pc"
+#export PKG_CONFIG_PATH="/usr/local/opt/libglade/lib/pkgconfig"
+#export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
 export PKG_CONFIG_PATH="/usr/local/opt/tcl-tk/lib/pkgconfig"
 
 # custom functions
@@ -80,3 +80,18 @@ HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-
 if [ -f "$HB_CNF_HANDLER" ]; then
 source "$HB_CNF_HANDLER";
 fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
