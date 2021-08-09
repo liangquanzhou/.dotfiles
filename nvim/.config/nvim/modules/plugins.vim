@@ -2,9 +2,6 @@ call plug#begin(stdpath('data') . '/plugged')
 
 " Monokai theme
 Plug 'tomasr/molokai'
-"Plug 'sickill/vim-monokai'
-"Plug 'crusoexia/vim-monokai'
-"Plug 'patstockwell/vim-monokai-tasty'
 
 " status bar
 Plug 'itchyny/lightline.vim'
@@ -62,7 +59,7 @@ Plug 'itchyny/vim-cursorword'
 "Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " semantic highlighting
-"Plug 'jaxbot/semantic-highlight.vim'
+Plug 'jaxbot/semantic-highlight.vim'
 " lastspace (https://github.com/farmergreg/vim-lastplace)
 "Plug 'farmergreg/vim-lastplace'
 "let g:lastplace_open_folds = 0
@@ -88,7 +85,8 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " display thin vertical lines for each indent level
 Plug 'Yggdroot/indentLine'
-let g:indentLine_setConceal = 0
+"let g:indentLine_setConceal = 0
+let g:indentLine_enabled = 1
 Plug 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0
 
@@ -154,7 +152,7 @@ let g:vim_markdown_math = 1
 
 " support front matter of various format
 let g:vim_markdown_frontmatter = 1  " for YAML format
-let g:vim_markdown_toml_frontmatter = 1  " for TOML format
+"let g:vim_markdown_toml_frontmatter = 1  " for TOML format
 "let g:vim_markdown_json_frontmatter = 1  " for JSON format
 
 Plug 'chrisbra/csv.vim'
@@ -227,8 +225,8 @@ Plug 'scrooloose/nerdtree'
 nnoremap <silent> <leader><C-n> :NERDTreeToggle<CR>
 
 " Language server protocal
-Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'kabouzeid/nvim-lspinstall'
 "" languageserver for R
 "let g:LanguageClient_serverCommands = {
 "    \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
@@ -245,4 +243,4 @@ let g:rehash256 = 1
 
 " -- to be continued --
 
-let g:omni_sql_no_default_maps = 1
+"let g:omni_sql_no_default_maps = 1
