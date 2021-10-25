@@ -30,6 +30,7 @@ export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$X
 export SPARK_CONF_DIR=$XDG_CONFIG_HOME/apache-spark
 export TASKRC=$XDG_CONFIG_HOME/task/taskrc
 export TASKDATA=$XDG_DATA_HOME/task
+export XML_CONFIG=/usr/local/opt/libxml2/bin/xml2-config
 
 # path
 export PATH=/usr/local/sbin:$PATH

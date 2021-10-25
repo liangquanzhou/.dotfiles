@@ -102,8 +102,9 @@ Plug 'jpalardy/vim-slime'
 " nnoremap <leader>r :REPLToggle
 " nnoremap <leader>l: TREPLSendLine
 let g:slime_target = "tmux"
-let g:slime_past_file = tempname()
-let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+"let g:slime_past_file = tempname()
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
+let g:slime_python_ipython = 1
 
 " pandoc and rmarkdown 
 Plug 'vim-pandoc/vim-rmarkdown'
@@ -187,6 +188,7 @@ Plug 'sbdchd/neoformat'
 
 " R language support
 Plug 'jalvesaq/Nvim-R'
+let R_assign_map = 0
 "Plug 'ncm2/ncm2'
 "Plug 'ncm2/ncm2-bufword'
 "Plug 'ncm2/ncm2-path'
