@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# ref: https://hasseg.org/icalBuddy/man.html
+icalBuddy -cf $XDG_CONFIG_HOME/icalBuddy/icalBuddyConfig.plist -f eventsToday

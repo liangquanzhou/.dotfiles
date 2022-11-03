@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo $XDG_CONFIG_HOME/zsh/program/wake/wake.sh

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# custom functions
+file-to-clipboard() {
+    osascript \
+        -e 'on run args' \
+        -e 'set currentDir to do shell script "pwd"' \
+        -e 'set the clipboard to POSIX file (first item of args)' \
+        -e end \
+        "$@"
+}
+
+file-to-clipboard $(pwd)/"$@"

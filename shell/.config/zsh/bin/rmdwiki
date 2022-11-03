@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rmdwiki(){
+    Rscript -e "library(conflr);confl_create_post_from_Rmd('$1', interactive = FALSE, update = TRUE)"
+}
