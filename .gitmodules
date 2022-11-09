@@ -1,0 +1,3 @@
+[submodule "shell/.config/zsh/program/wake"]
+	path = shell/.config/zsh/program/wake
+	url = https://github.com/Moarram/wake.git
