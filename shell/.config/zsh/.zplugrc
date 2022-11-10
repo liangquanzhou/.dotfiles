@@ -4,7 +4,7 @@ source $ZPLUG_HOME/init.zsh
 
 # zsh theme
 #zplug "themes/robbyrussell", from:oh-my-zsh
-zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+#zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
 # zsh plugins
 #zplug "lib/*", from:oh-my-zsh
@@ -50,7 +50,7 @@ zplug "zsh-users/zsh-completions"
 zplug "mafredri/zsh-async", from:"github", use:"async.zsh"
 #zplug "zsh-users/zsh-syntax-highlighting"
 #zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zdharma-continuum/fast-syntax-highlighting"
+zplug "zdharma-continuum/fast-syntax-highlighting", defer:2
 
 # check, load, install
 zplug check || zplug install

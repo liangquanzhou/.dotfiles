@@ -1,7 +1,8 @@
 call plug#begin(stdpath('data') . '/plugged')
 
 " Monokai theme
-Plug 'tomasr/molokai'
+"Plug 'tomasr/molokai'
+"Plug 'UtkarshVerma/molokai.nvim', { 'branch': 'main' }
 
 " status bar
 Plug 'itchyny/lightline.vim'
@@ -78,7 +79,7 @@ Plug 'tpope/vim-commentary'
 
 Plug 'preservim/nerdcommenter'
 " Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'sql': { 'left': '--','right': '' } }
+let g:NERDCustomDelimiters = { 'sql': { 'left': '-- ','right': '' } }
 
 " enhanced visual selection (https://github.com/mg979/vim-visual-multi/wiki/Quick-start)
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -235,14 +236,28 @@ nnoremap <silent> <leader><C-n> :NERDTreeToggle<CR>
 "    \ }
 
 " treesitter
-"Plug 'nvim-treesitter/nvim-treesitteg', {'do': 'TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter'
+
+Plug 'folke/lsp-colors.nvim'
+Plug 'vim-scripts/dbext.vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'p00f/nvim-ts-rainbow'
+"Plug 'unblevable/quick-scope'
+Plug 'aklt/plantuml-syntax'
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'msva/luakai'
+Plug 'SidOfc/mkdx'
+Plug 'shmup/vim-sql-syntax'
+Plug 'iamcco/markdown-preview.nvim'
 
 " Initialize plugin system
 call plug#end()
 
-colorscheme molokai
-let g:rehash256 = 1
+colorscheme luakai
+"let g:rehash256 = 1
 
 " -- to be continued --
 
 "let g:omni_sql_no_default_maps = 1
+

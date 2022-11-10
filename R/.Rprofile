@@ -12,7 +12,7 @@ if (interactive()) {
 }
 
 # source personal settings
-try(source(paste0("~/.", system('whoami',intern = T), ".Rprofile")), silent = T)
+try(source(paste0("~/.", "Rprofile.local")), silent = T)
 
 # always want stringAsFactors = FALSE
 options(stringsAsFactors = FALSE)
