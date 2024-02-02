@@ -41,6 +41,26 @@ zvm_after_init_commands+=('[ -f $XDG_CONFIG_HOME/fzf/.fzf.zsh ] && source $XDG_C
 #source "/usr/local/opt/spaceship/spaceship.zsh"
 #eval spaceship_vi_mode_enable
 eval "$(/usr/local/bin/starship init zsh --print-full-init)"
+#eval "$(pyenv init -)"
+#conda init "$(basename "${SHELL}")"
+
 
 #typeset -aU path
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+#conda deactivate

@@ -47,6 +47,27 @@
             ]
         },
         {
+            "description": "Open Chrome Canary",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "g",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "osascript -e 'tell application \"Google Chrome Canary\" to activate'"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
             "description": "Open D-Chat",
             "manipulators": [
                 {
@@ -219,7 +240,7 @@
             "manipulators": [
                 {
                     "from": {
-                        "key_code": "m",
+                        "key_code": "b",
                         "modifiers": {
                             "mandatory": [
                                 "right_option"

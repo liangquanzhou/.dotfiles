@@ -1,0 +1,144 @@
+#custom_cursor_colors = true
+live_config_reload = true
+#"window.opacity" = 1.0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#666666"
+blue = "#819AFF"
+cyan = "#66D9EF"
+green = "#A6E22E"
+magenta = "#AE81FF"
+red = "#F92672"
+white = "#F8F8F2"
+yellow = "#E2E22E"
+
+[colors.cursor]
+cursor = "#00ff00"
+text = "#000000"
+
+[colors.hints.end]
+background = "#1d1f21"
+foreground = "#e9ff5e"
+
+[colors.hints.start]
+background = "#e9ff5e"
+foreground = "#1d1f21"
+
+[colors.normal]
+black = "#333333"
+blue = "#6A7EC8"
+cyan = "#56ADBC"
+green = "#86B42B"
+magenta = "#8C6BC8"
+red = "#C4265E"
+white = "#E3E3DD"
+yellow = "#B3B42B"
+
+[colors.primary]
+background = "#1B1D1E"
+foreground = "#F8F8F2"
+
+[colors.search.focused_match]
+background = "#B3B42B"
+foreground = "#000000"
+
+#[colors.search.footer_bar]
+#background = "#c5c8c6"
+
+[colors.search.matches]
+background = "#ffffff"
+foreground = "#000000"
+
+[colors.selection]
+background = "#B3B42B"
+text = "#1d1f21"
+
+[colors.vi_mode_cursor]
+cursor = "#00ff00"
+text = "#000000"
+
+[cursor]
+blink_interval = 750
+thickness = 0.2
+unfocused_hollow = true
+vi_mode_style = "None"
+
+[cursor.style]
+blinking = "Off"
+shape = "Beam"
+
+[debug]
+print_events = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+#AppleFontSmoothing = true
+size = 13
+
+[font.bold]
+family = "Hack Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[hints]
+alphabet = "jfkdls;ahgurieowpq"
+
+[[hints.enabled]]
+command = "open"
+post_processing = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[hints.enabled.binding]
+key = "U"
+mods = "Control|Shift"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "None"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "Back"
+
+[mouse]
+hide_when_typing = false
+
+#[mouse.hits]
+#launcher = "Open"
+#modifiers = "Command"
+
+[scrolling]
+history = 20000
+multiplier = 3
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[shell]
+args = ["--login"]
+program = "/usr/local/bin/zsh"
+
+[window]
+decorations = "buttonless"

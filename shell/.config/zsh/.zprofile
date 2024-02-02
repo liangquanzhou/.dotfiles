@@ -7,7 +7,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # variables
-#export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export RSTUDIO_PANDOC=/Applications/RStudio.app/Contents/MacOS/pandoc # pandoc for run R in cli
 export EDITOR=/usr/local/bin/nvim
 export DOTNET_ROOT=/usr/local/opt/dotnet/libexec
@@ -38,6 +38,8 @@ export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
 export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/pythonrc.py
 export TIMEWARRIORDB=$XDG_DATA_HOME/timewarrior
 export MPLCONFIGDIR=$XDG_CONFIG_HOME/matplotlib
+export PYENV_ROOT=$XDG_DATA_HOME/pyenv
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 #export R_USER=$XDG_CONFIG_HOME/R
 #export R_PROFILE_USER=$XDG_CONFIG_HOME/R/Rprofile
 #export R_ENVIORN_USER=$XDG_CONFIG_HOME/R/Renviron

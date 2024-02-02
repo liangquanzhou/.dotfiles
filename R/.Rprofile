@@ -9,6 +9,12 @@ if (interactive()) {
   suppressWarnings(suppressPackageStartupMessages(
   if (!require(pacman)) utils::install.packages("pacman", repos = 'http://mirror.tuna.tsinghua.edu.cn/CRAN/', quite = TRUE)
   ))
+  library(showtext)
+  showtext::showtext_auto()
+  # library(tidyverse)
+  library(lubridate)
+  library(clipr)
+  library(glue)
 }
 
 # source personal settings

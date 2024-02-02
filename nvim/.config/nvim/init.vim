@@ -11,7 +11,8 @@ source ~/.config/nvim/modules/plugins.vim
 source ~/.config/nvim/modules/custom_functions.vim
 
 let g:python3_host_prog = '/usr/local/bin/python3'
-let g:ruby_host_prog = '/usr/local/opt/ruby/bin/ruby'
+"let g:ruby_host_prog = '/usr/local/opt/ruby/bin/ruby'
+let g:ruby_host_prog = '/usr/local/bin/neovim-ruby-host'
 let g:node_host_prog = '/usr/local/bin/neovim-node-host'
 let g:loaded_perl_provider = 0
 

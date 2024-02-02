@@ -238,11 +238,11 @@ nnoremap <silent> <leader><C-n> :NERDTreeToggle<CR>
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter'
 
-Plug 'folke/lsp-colors.nvim'
+"Plug 'folke/lsp-colors.nvim'
 Plug 'vim-scripts/dbext.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
-Plug 'p00f/nvim-ts-rainbow'
+"Plug 'p00f/nvim-ts-rainbow'
 "Plug 'unblevable/quick-scope'
 Plug 'aklt/plantuml-syntax'
 Plug 'weirongxu/plantuml-previewer.vim'

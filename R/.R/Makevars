@@ -1,1 +1,2 @@
-FLIBS =  -L/usr/local/opt/gcc/lib/gcc/11 -lgfortran -lquadmath -lm
+CPPFLAGS += -Xclang -fopenmp
+LDFLAGS += -lomp
