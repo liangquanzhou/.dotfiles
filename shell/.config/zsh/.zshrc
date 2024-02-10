@@ -39,8 +39,9 @@ zvm_after_init_commands+=('[ -f $XDG_CONFIG_HOME/fzf/.fzf.zsh ] && source $XDG_C
 
 #source $(brew --prefix)/opt/spaceship/spaceship.zsh
 #source "/usr/local/opt/spaceship/spaceship.zsh"
+source "/opt/homebrew/opt/spaceship/spaceship.zsh"
 #eval spaceship_vi_mode_enable
-eval "$(/usr/local/bin/starship init zsh --print-full-init)"
+#eval "$(/usr/local/bin/starship init zsh --print-full-init)"
 #eval "$(pyenv init -)"
 #conda init "$(basename "${SHELL}")"
 

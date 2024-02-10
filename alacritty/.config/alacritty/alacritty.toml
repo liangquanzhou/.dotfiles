@@ -138,7 +138,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [shell]
 args = ["--login"]
-program = "/usr/local/bin/zsh"
+program = "/opt/homebrew/bin/zsh"
 
 [window]
 decorations = "buttonless"
