@@ -1,0 +1,9 @@
+R_PROFILE_USER=${HOME}/.config/R/Rprofile
+R_MAKEVARS_USER=${HOME}/.config/R/Makevars
+R_LIBS_USER=${HOME}/.local/share/R/library
+R_HISTFILE=${HOME}/.local/share/R/Rhistory
+R_HISTSIZE=1000000000
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+R_STARTUP_DEBUG=TRUE
+RSTUDIO_PANDOC=/opt/homebrew/bin/pandoc

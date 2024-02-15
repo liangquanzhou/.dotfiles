@@ -12,7 +12,7 @@ source ~/.config/nvim/modules/custom_functions.vim
 
 let g:python3_host_prog = '/opt/homebrew/bin/python3'
 "let g:ruby_host_prog = '/opt/homebrew/opt/ruby/bin/ruby'
-let g:ruby_host_prog = '/opt/homebrew/bin/neovim-ruby-host'
+let g:ruby_host_prog = '/opt/homebrew/opt/ruby/bin/neovim-ruby-host'
 let g:node_host_prog = '/opt/homebrew/bin/neovim-node-host'
 let g:loaded_perl_provider = 0
 

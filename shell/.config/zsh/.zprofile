@@ -1,6 +1,5 @@
 # alias 
 alias vim=nvim
-alias b=buku
 
 # language
 export LANG=en_US.UTF-8
@@ -12,7 +11,6 @@ export RSTUDIO_PANDOC=/Applications/RStudio.app/Contents/MacOS/pandoc # pandoc f
 export EDITOR=/opt/homebrew/bin/nvim
 export DOTNET_ROOT=/opt/homebrew/opt/dotnet/libexec
 export SHELL=/opt/homebrew/bin/zsh
-#export JAVA_HOME=/usr/local/opt/java/libexec/openjdk.jdk/Contents/Home
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
@@ -28,7 +26,7 @@ export CONDARC=$XDG_CONFIG_HOME/conda/condarc
 export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql/history
 export LESSKEY=$XDG_CONFIG_HOME/less/lesskey
 export LESSHISTFILE=$XDG_CACHE_HOME/less/history
-export WGETRC=$XDG_CONFIG_HOME/wgetrc
+#export WGETRC=$XDG_CONFIG_HOME/wgetrc
 export VIMDOTDIR=$XDG_CONFIG_HOME/vim
 export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
 export SPARK_CONF_DIR=$XDG_CONFIG_HOME/apache-spark
@@ -39,17 +37,7 @@ export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/pythonrc.py
 export TIMEWARRIORDB=$XDG_DATA_HOME/timewarrior
 export MPLCONFIGDIR=$XDG_CONFIG_HOME/matplotlib
 export PYENV_ROOT=$XDG_DATA_HOME/pyenv
-#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#export R_USER=$XDG_CONFIG_HOME/R
-#export R_PROFILE_USER=$XDG_CONFIG_HOME/R/Rprofile
-#export R_ENVIORN_USER=$XDG_CONFIG_HOME/R/Renviron
-#export R_MAKEVARS_USER=$XDG_CONFIG_HOME/R/Makevars
-#export R_HISTFILE=$XDG_DATA_HOME/Rhistory
-#export R_LIBS_USER=$HOME/Library/R/x86_64/4.1/library
-#export R_HISTSIZE=10000000
-#export R_STARTUP_DEBUG=TRUE
-#export MKL_NUM_THREADS=16
-#export OMP_NUM_THREADS=16
+#export R_ENVIRON_USER=$XDG_CONFIG_HOME/R/Renviron
 #export OPENSSL_DIR=/usr/local/opt/openssl
 
 # path
@@ -60,8 +48,6 @@ export PATH=/opt/homebrew/opt/ruby/bin:$PATH
 export PATH=/opt/homebrew/opt/tcl-tk/bin:$PATH
 export PATH=/opt/homebrew/opt/openssl/bin:$PATH
 export PATH=/opt/homebrew/opt/curl/bin:$PATH
-#export PATH=/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH
-#export PATH=/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH
 export PATH=/opt/homebrew/opt/llvm/bin:$PATH
 export PATH=/opt/homebrew/opt/sqlite/bin:$PATH
 export PATH=$JAVA_HOME/bin:$PATH
@@ -75,23 +61,7 @@ export PATH=/opt/X11/bin:$PATH
 # fpath
 export FPATH=/uar/local/share/zsh/functions${FPATH+:$FPATH}
 
-# flags
-#export LDFLAGS="-L/usr/local/opt/sqlite/lib"
-#export CPPFLAGS="-I/usr/local/opt/sqlite/include"
-#export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
-#export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
-#export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
-#export CPPFLAGS="-I/usr/local/opt/openjdk/include"
-#export PKG_CONFIG_PATH="/usr/X11/lib/pkgconfig"
-#export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-#export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig/gtk+-2.0.pc"
-#export PKG_CONFIG_PATH="/usr/local/opt/libglade/lib/pkgconfig"
-#export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
-#export PKG_CONFIG_PATH="/usr/local/opt/tcl-tk/lib/pkgconfig"
-
 HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
 if [ -f "$HB_CNF_HANDLER" ]; then
 source "$HB_CNF_HANDLER";
 fi
-
-#. /usr/local/opt/asdf/libexec/asdf.sh

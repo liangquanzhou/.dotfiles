@@ -43,7 +43,7 @@ options(radian.insert_new_line = TRUE)
 
 # where the global history is stored, environmental variables will be expanded
 # note that "~" is expanded to %USERPROFILE% or %HOME% in Windows
-options(radian.global_history_file = "~/.radian_history")
+options(radian.global_history_file = "~/.local/share/radian/radian_history")
 # the filename that local history is stored, this file would be used instead of
 # `radian.global_history_file` if it exists in the current working directory
 options(radian.local_history_file = ".radian_history")
@@ -76,7 +76,6 @@ options(
     )
 )
 options(radian.emacs_bindings_in_vi_insert_mode = TRUE)
-library(colorout)
 
 options(radian.escape_key_map = list(
     list(key = ".", value = " %>% "),
